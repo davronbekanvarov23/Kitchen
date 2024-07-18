@@ -21,6 +21,7 @@ export const action = async ({ request }) => {
   let title = formData.get("title");
   let description = formData.get("description");
   let completed = formData.get("completed");
+  let ingredients = formData.get("ingredients");
   let cookingTime = formData.get("cookingTime");
 
   let imageUrl = formData.get("imageUrl");
@@ -29,7 +30,7 @@ export const action = async ({ request }) => {
 
 function Create() {
   const userData = useActionData();
-  console.log(userData);
+  
   const { user } = useSelector((state) => state.user);
 
   // const items = Array.from({ length: 100 }, (_, index) => `Item ${index + 1}`);

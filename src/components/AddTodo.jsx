@@ -3,15 +3,15 @@ import FormInput from "./FormInput";
 import { useEffect, useRef, useState } from "react";
 
 function AddTodo() {
-  const [Ingredients, setIngredients] = useState([]);
-  const ref = useRef(null);
-  const addedIngredient = () => {
-    setIngredients((prevObj) => [...prevObj, ref.current.value]);
-  };
+  // const [Ingredients, setIngredients] = useState([]);
+  // const ref = useRef(null);
+  // const addedIngredient = () => {
+  //   setIngredients((prevObj) => [...prevObj, ref.current.value]);
+  // };
 
-  useEffect(() => {
-    ref.current.value = "";
-  }, [Ingredients]);
+  // useEffect(() => {
+  //   ref.current.value = "";
+  // }, [Ingredients]);
 
   return (
     <div className="card bg-base-100 max-w-[900px] shadow-xl p-8 align-element">
@@ -29,7 +29,7 @@ function AddTodo() {
           label="Cooking Time:"
           placeholder="example:60"
         />
-        <div>
+        {/* <div>
           <input
             name="ingredients"
             type="text"
@@ -47,7 +47,13 @@ function AddTodo() {
                 return <li key={index}>{ing}</li>;
               })}
           </div>
-        </div>
+        </div> */}
+        <FormInput
+          name="ingredients"
+          type="text"
+          label="Ingradients:"
+          placeholder="rice,onion,meat..."
+        />
         <FormInput
           name="imageUrl"
           type="url"
@@ -60,7 +66,7 @@ function AddTodo() {
           label="Description:"
           placeholder="type here"
         />
-        <button className="btn btn-primary btn-block max-w-xs"> Add</button>
+        <button className="btn btn-primary btn-block max-w-xs" > Add</button>
       </Form>
     </div>
   );
