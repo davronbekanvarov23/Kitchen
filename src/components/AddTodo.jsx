@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 function AddTodo() {
   // const [Ingredients, setIngredients] = useState([]);
-  // const ref = useRef(null);
+  const ref = useRef(null);
   // const addedIngredient = () => {
   //   setIngredients((prevObj) => [...prevObj, ref.current.value]);
   // };
@@ -66,7 +66,7 @@ function AddTodo() {
           label="Description:"
           placeholder="type here"
         />
-        <button className="btn btn-primary btn-block max-w-xs" > Add</button>
+        <button className="btn btn-primary btn-block max-w-xs"> Add</button>
       </Form>
     </div>
   );

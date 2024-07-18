@@ -50,7 +50,7 @@ function Create() {
 
       addDoc(collection(db, "Todos"), newTodo)
         .then(() => {
-          toast.success("New todo added");
+          toast.success("Added new recipe succesfully:)");
         })
         .catch((error) => toast.error(error.message));
     }

@@ -7,7 +7,7 @@ import {
 import { useEffect } from "react";
 
 //pages
-import { Create, Home, Login, Register } from "./pages";
+import { Create, Home, Login, Register, SingleMeal } from "./pages";
 
 //layouts
 import MainLayout from "./layout/MainLayout";
@@ -44,6 +44,10 @@ function App() {
         {
           index: true,
           element: <Home />,
+        },
+        {
+          path: "/meal/:title",
+          element: <SingleMeal />,
         },
         {
           path: "/create",
