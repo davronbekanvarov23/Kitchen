@@ -3,7 +3,7 @@
 import { useActionData } from "react-router-dom";
 
 //react
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 
@@ -16,12 +16,13 @@ import { serverTimestamp, addDoc, collection } from "firebase/firestore";
 
 //action
 export const action = async ({ request }) => {
+
   let formData = await request.formData();
   let title = formData.get("title");
   let description = formData.get("description");
   let completed = formData.get("completed");
   let cookingTime = formData.get("cookingTime");
-  let ingredients = formData.get( "ingredients");
+
   let imageUrl = formData.get("imageUrl");
   return { title, completed, description, cookingTime, ingredients, imageUrl };
 };

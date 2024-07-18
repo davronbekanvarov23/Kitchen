@@ -31,10 +31,16 @@ function Register() {
   }, [userData]);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-      <div className="hidden lg:block h-full bg-orange-50 bg-[url('./login.jpg')] bg-center bg-cover"></div>
-      <div className=" h-full  grid place-items-center bg-[url('./login.jpg')] lg:bg-none bg-center bg-cover">
-        <div className=" card bg-base-100 w-96 shadow-xl  p-8">
+    <div className="grid min-h-screen">
+      <video
+        autoPlay
+        loop
+        muted
+        className=" bg-cover h-screen absolute -z-10 opacity-90 object-cover w-full "
+        src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/HanRIVMTnllmc6z4b/videoblocks-altri-condimenti_13_r4xd25m0va__623f199883a31153d7bbefe23831ebf1__P360.mp4"
+      ></video>
+      <div className=" h-full  grid place-items-center px-4">
+        <div className=" card bg-base-100 w-full max-w-96 shadow-xl  p-8 ">
           <Form method="post" className="flex flex-col items-center gap-5">
             <h1 className=" text-3xl font-semibold">Register</h1>
             <FormInput type="text" label="displayName" name="displayName" />
