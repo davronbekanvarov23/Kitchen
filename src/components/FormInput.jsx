@@ -11,6 +11,7 @@ function FormInput({ name, label, type, placeholder, size }) {
         placeholder={placeholder}
         className="input input-bordered input-success "
         name={name}
+        required
       />
     </label>
   );
