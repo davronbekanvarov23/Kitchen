@@ -9,12 +9,14 @@ import { logout } from "../app/userSlice";
 
 //rrd
 import { Link } from "react-router-dom";
+import { BsCart3 } from "react-icons/bs";
 
 //components
 import { FaBarsStaggered } from "react-icons/fa6";
 import { Mode, Weather } from "../components";
 
 function Navbar() {
+  const  {amount}  = useSelector((state) => state.products);
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -51,6 +53,7 @@ function Navbar() {
               <li>
                 <Mode />
               </li>{" "}
+
               <li>
                 <button onClick={logoutProfile}>Logout</button>
               </li>
@@ -74,6 +77,19 @@ function Navbar() {
               <img src={user.photoURL} alt="" className="object-cover" />
             </div>
           </div>
+       
+          <Link
+            to="/cart"
+            className="indicator btn btn-ghost btn-circle btn-md ml-4"
+          >
+            <div className=" indicator">
+              <span className="indicator-item badge badge-primary badge-sm">
+                {amount}
+              </span>
+              <BsCart3 className="w-6 h-6 " />
+            </div>
+          </Link>
+       
           <button
             onClick={logoutProfile}
             className="hidden lg:btn ml-5 lg:btn-primary  "

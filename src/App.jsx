@@ -7,7 +7,7 @@ import {
 import { useEffect } from "react";
 
 //pages
-import { Create, Home, Login, Register, SingleMeal } from "./pages";
+import { Cart, Create, Home, Login, Register, SingleMeal } from "./pages";
 
 //layouts
 import MainLayout from "./layout/MainLayout";
@@ -48,6 +48,10 @@ function App() {
         {
           path: "/meal/:title",
           element: <SingleMeal />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
         },
         {
           path: "/create",

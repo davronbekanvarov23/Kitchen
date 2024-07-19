@@ -23,12 +23,37 @@ function AddTodo() {
           label="Title:"
           placeholder="example:Palov"
         />
-        <FormInput
-          name="cookingTime"
-          type="number"
-          label="Cooking Time:"
-          placeholder="example:60"
-        />
+        <div className="flex gap-20">
+          <label className="form-control w-full max-w-xs">
+            <div className="label">
+              <span className="label-text font-bold">Category:</span>
+            </div>
+            <select
+              className="select select-success w-full max-w-xs"
+              name="category"
+            >
+              <option selected>Uzbek</option>
+              <option>Turkey</option>
+              <option>Euro</option>
+              <option>Fast Food</option>
+              <option>Others</option>
+            </select>
+          </label>
+          <FormInput
+            name="cookingTime"
+            type="number"
+            label="Cooking Time (m):"
+            placeholder="example:60"
+            size="max-w-[200px]"
+          />{" "}
+          <FormInput
+            name="price"
+            type="number"
+            label="Price $:"
+            placeholder="example:10"
+            size="max-w-[200px]"
+          />
+        </div>
         {/* <div>
           <input
             name="ingredients"

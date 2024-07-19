@@ -1,6 +1,6 @@
 // import Pagination from "../components/Pagination";
 //rrd
-import { useActionData } from "react-router-dom";
+import { useActionData, useNavigate } from "react-router-dom";
 
 //react
 import { useEffect, useState } from "react";
@@ -16,22 +16,36 @@ import { serverTimestamp, addDoc, collection } from "firebase/firestore";
 
 //action
 export const action = async ({ request }) => {
-
   let formData = await request.formData();
   let title = formData.get("title");
   let description = formData.get("description");
   let completed = formData.get("completed");
   let ingredients = formData.get("ingredients");
   let cookingTime = formData.get("cookingTime");
-
+  let category = formData.get("category");
   let imageUrl = formData.get("imageUrl");
-  return { title, completed, description, cookingTime, ingredients, imageUrl };
+  let price = formData.get("price");
+  return {
+    title,
+    completed,
+    description,
+    cookingTime,
+    ingredients,
+    imageUrl,
+    category,
+    price,
+  };
 };
 
 function Create() {
   const userData = useActionData();
-  
   const { user } = useSelector((state) => state.user);
+
+  const navigate = useNavigate();
+  const actionData = useActionData();
+  useEffect(() => {
+    if (actionData) navigate("/");
+  }, [actionData]);
 
   // const items = Array.from({ length: 100 }, (_, index) => `Item ${index + 1}`);
 
@@ -44,8 +58,10 @@ function Create() {
         cookingTime: userData.cookingTime,
         ingredients: userData.ingredients,
         imageUrl: userData.imageUrl,
+        category: userData.category,
+        price: userData.price,
         uid: user.uid,
-        createdAt: serverTimestamp(),
+        // createdAt: serverTimestamp(),
       };
 
       addDoc(collection(db, "Todos"), newTodo)

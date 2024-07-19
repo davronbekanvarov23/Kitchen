@@ -14,8 +14,8 @@ function TodoList({ data }) {
         toast.error(error.message);
       });
   };
-  
 
+  
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 p-4">
       {!data && <span className="loading loading-spinner text-primary"></span>}
@@ -41,9 +41,10 @@ function TodoList({ data }) {
                   <h1 className=" text-2xl font-bold">{item.title}</h1>
                   <p>{item.description.substring(0, 100)}...</p>
 
-                  <p className=" ml-auto rounded-lg bg-pink-500   font-bold px-2 ">
+                  <p className=" ml-auto rounded-lg bg-pink-400   font-bold px-2 ">
                     ⏱ {item.cookingTime} minutes
                   </p>
+                 
                 </Link>
                 <img
                   src={item.imageUrl}

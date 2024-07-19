@@ -17,7 +17,7 @@ export const useCollection = (collectionName, whereData, orderData) => {
       const q = query(
         collection(db, collectionName),
         where(...whereData),
-        orderBy(...orderData)
+        // orderBy(...orderData)
       );
       onSnapshot(q, (quarySnapshot) => {
         const data = [];
