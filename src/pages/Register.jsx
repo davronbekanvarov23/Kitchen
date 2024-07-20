@@ -37,17 +37,17 @@ function Register() {
         loop
         muted
         className=" bg-cover h-screen absolute -z-10 opacity-90 object-cover w-full "
-        src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/HanRIVMTnllmc6z4b/videoblocks-altri-condimenti_13_r4xd25m0va__623f199883a31153d7bbefe23831ebf1__P360.mp4"
+        src="../../public/RegisterBg.mp4"
       ></video>
       <div className=" h-full  grid place-items-center px-4">
-        <div className=" card bg-base-100 w-full max-w-96 shadow-xl  p-8 ">
-          <Form method="post" className="flex flex-col items-center gap-5">
+        <div className=" card bg-base-100 w-full max-w-96 shadow-xl  px-8 py-4 ">
+          <Form method="post" className="flex flex-col items-center ">
             <h1 className=" text-3xl font-semibold">Register</h1>
             <FormInput type="text" label="displayName" name="displayName" />
             <FormInput type="url" label="photoURL" name="photoURL" />
             <FormInput type="email" label="email" name="email" />
             <FormInput type="password" label="password" name="password" />
-            <div className=" w-full">
+            <div className=" w-full mt-2">
               {!isPanding && (
                 <button className="btn btn-primary btn-block">Register</button>
               )}

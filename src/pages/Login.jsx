@@ -37,7 +37,7 @@ function Login() {
         loop
         muted
         className=" bg-cover h-screen absolute -z-10 opacity-90 object-cover w-full "
-        src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/rC3rWV0BBk06c5omv/videoblocks-v1-0001_20230926-as-peskov-cooking-show-3-ariant00000000_b2m_k9bsa__d2d40e2efac7a8fe50dc8c7b90edf0d0__P360.mp4"
+        src="../../public/LoginBg.mp4"
       ></video>
 
       <div className=" h-full  grid place-items-center px-4">
