@@ -19,7 +19,7 @@ function Home() {
   );
   return (
     <div
-      className=" bg-[url('../../public/HomeBg.jpg')] bg-cover min-h-[700px] 
+      className=" bg-[url('/public/HomeBg.jpg')] bg-cover min-h-[700px] 
   lg:min-h-[483px]
   "
     >
