@@ -34,10 +34,12 @@ function TodoList({ data }) {
                   <IoMdCloseCircleOutline size={25} />
                 </button>
                 <Link
-                  to={`/Meal/${item.title.charAt(1).toUpperCase()}`}
+                  to={`/Meal/${item.title}`}
                   className="p-4 flex gap-3 flex-col"
                 >
-                  <h1 className=" text-2xl font-bold">{item.title}</h1>
+                  <h1 className=" text-2xl font-bold capitalize">
+                    {item.title}
+                  </h1>
                   <p>{item.description.substring(0, 100)}...</p>
 
                   <p className=" ml-auto rounded-lg bg-pink-400   font-bold px-2 ">

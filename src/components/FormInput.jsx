@@ -9,7 +9,7 @@ function FormInput({ name, label, type, placeholder, size }) {
       <input
         type={type}
         placeholder={placeholder}
-        className="input input-bordered input-success "
+        className="input input-bordered input-success w-full "
         name={name}
         required
       />

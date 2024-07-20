@@ -4,17 +4,18 @@ import { useDispatch } from "react-redux";
 import { removeProduct, changeAmount } from "../app/productSlice";
 import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/index";
+
 function Cart() {
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.products);
 
-  if (products.length == 0) {
+  if (products.length === 0) {
     return (
-      <div className=" align-element flex flex-col  items-center gap-5">
-        <h1 className=" text-2xl font-medium">
-          Savatda hozircha mahsulot yo' q
+      <div className="align-element flex flex-col items-center gap-5 p-4">
+        <h1 className="text-2xl font-medium text-center">
+          Savatda hozircha mahsulot yo'q
         </h1>
-        <p>Bosh sahifadagi to'plamlardan boshlang</p>
+        <p className="text-center">Bosh sahifadagi to'plamlardan boshlang</p>
         <Link className="btn btn-primary" to="/">
           Home
         </Link>
@@ -22,107 +23,102 @@ function Cart() {
     );
   } else {
     return (
-      <div className=" align-element overflow-x-auto">
-        <table className="table">
-          {/* head */}
+      <div className="align-element overflow-x-auto p-4">
+        <table className="table-auto w-full">
           <thead>
-            <tr>
-              <th>Name/category</th>
-              <th>Price</th>
-              <th>Description</th>
-              <th>Amount</th>
-              <th>Total Price</th>
-              <th></th>
+            <tr className="bg-gray-100">
+              <th className="p-2">Nomi/Kategoriyasi</th>
+              <th className="p-2">Narxi</th>
+              <th className="p-2">Tavsifi</th>
+              <th className="p-2">Miqdori</th>
+              <th className="p-2">Umumiy Narx</th>
+              <th className="p-2"></th>
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => {
-              return (
-                <tr key={product.id}>
-                  <td>
-                    <div className="flex items-center gap-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img src={product.imageUrl} alt={product.name} />
-                        </div>
-                      </div>
-                      <div>
-                        <div className="font-bold">{product.title}</div>
-                        <div className="text-sm opacity-50">
-                          {product.category}
-                        </div>
+            {products.map((product) => (
+              <tr key={product.id} className="border-b">
+                <td className="p-2">
+                  <div className="flex items-center gap-3">
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <img src={product.imageUrl} alt={product.name} />
                       </div>
                     </div>
-                  </td>
-                  <td>
-                    <h1 className=" text-xl ">{formatPrice(product.price)}</h1>
-                  </td>
-                  <td>
-                    <br />
-                    <span>{product.description}...</span>
-                  </td>
-                  <td>
-                    <div className="flex items-center justify-center gap-2">
-                      <button
-                        onClick={() =>
+                    <div>
+                      <div className="font-bold">{product.title}</div>
+                      <div className="text-sm opacity-50">
+                        {product.category}
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td className="p-2">
+                  <h1 className="text-xl">{formatPrice(product.price)}</h1>
+                </td>
+                <td className="p-2">
+                  <span>{product.description}...</span>
+                </td>
+                <td className="p-2">
+                  <div className="flex items-center justify-center gap-2">
+                    <button
+                      onClick={() =>
+                        dispatch(
+                          changeAmount({
+                            type: "increment",
+                            id: product.id,
+                          })
+                        )
+                      }
+                      className="btn-sm"
+                    >
+                      +
+                    </button>
+                    <h3>{product.amount}</h3>
+                    <button
+                      onClick={() => {
+                        if (product.amount === 1) {
+                          dispatch(removeProduct(product.id));
+                        } else {
                           dispatch(
                             changeAmount({
-                              type: "increment",
+                              type: "decrement",
                               id: product.id,
                             })
-                          )
+                          );
                         }
-                        className="btn-sm"
-                      >
-                        +
-                      </button>
-                      <h3>{product.amount}</h3>
-                      <button
-                        onClick={() => {
-                          if (product.amount == 1) {
-                            dispatch(removeProduct(product.id));
-                          } else {
-                            dispatch(
-                              changeAmount({
-                                type: "decriment",
-                                id: product.id,
-                              })
-                            );
-                          }
-                        }}
-                        disabled={product.amount == 0 ? true : false}
-                        className="btn-sm"
-                      >
-                        -
-                      </button>
-                    </div>
-                  </td>
-                  <td>
-                    <h1 className=" text-xl w-5">
-                      {formatPrice(product.price * product.amount)}
-                    </h1>
-                  </td>
-
-                  <th>
-                    <button
-                      onClick={() => dispatch(removeProduct(product.id))}
-                      className="btn btn-ghost btn-xs"
+                      }}
+                      disabled={product.amount === 0}
+                      className="btn-sm"
                     >
-                      <FaTrash className=" w-5 h-5" />
+                      -
                     </button>
-                  </th>
-                </tr>
-              );
-            })}
+                  </div>
+                </td>
+                <td className="p-2">
+                  <h1 className="text-xl w-5">
+                    {formatPrice(product.price * product.amount)}
+                  </h1>
+                </td>
+                <td className="p-2">
+                  <button
+                    onClick={() => dispatch(removeProduct(product.id))}
+                    className="btn btn-ghost btn-xs"
+                  >
+                    <FaTrash className="w-5 h-5" />
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
-          {/* foot */}
           <tfoot>
             <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th> </th>
-              <th> </th>
+              <th className="p-2"></th>
+              <th className="p-2"></th>
+              <th className="p-2"></th>
+              <th className="p-2"></th>
+              <th className="p-2"></th>
+              <th className="p-2"></th>
             </tr>
           </tfoot>
         </table>

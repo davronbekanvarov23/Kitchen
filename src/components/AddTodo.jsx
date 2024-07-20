@@ -23,7 +23,7 @@ function AddTodo() {
           label="Title:"
           placeholder="example:Palov"
         />
-        <div className="flex gap-20">
+        <div className="flex gap-5 max-w-[700px] w-full ">
           <label className="form-control w-full max-w-xs">
             <div className="label">
               <span className="label-text font-bold">Category:</span>
@@ -42,16 +42,16 @@ function AddTodo() {
           <FormInput
             name="cookingTime"
             type="number"
-            label="Cooking Time (m):"
+            label=" Time (m):"
             placeholder="example:60"
-            size="max-w-[200px]"
+            size="max-w-xs"
           />{" "}
           <FormInput
             name="price"
             type="number"
             label="Price $:"
             placeholder="example:10"
-            size="max-w-[200px]"
+            size="max-w-xs"
           />
         </div>
         {/* <div>
