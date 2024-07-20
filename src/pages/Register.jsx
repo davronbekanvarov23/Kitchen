@@ -37,7 +37,7 @@ function Register() {
         loop
         muted
         className=" bg-cover h-screen absolute -z-10 opacity-90 object-cover w-full "
-        src="../../public/RegisterBg.mp4"
+        src="/public/RegisterBg.mp4"
       ></video>
       <div className=" h-full  grid place-items-center px-4">
         <div className=" card bg-base-100 w-full max-w-96 shadow-xl  px-8 py-4 ">

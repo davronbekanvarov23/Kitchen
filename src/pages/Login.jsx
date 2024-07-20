@@ -37,7 +37,7 @@ function Login() {
         loop
         muted
         className=" bg-cover h-screen absolute -z-10 opacity-90 object-cover w-full "
-        src="../../public/LoginBg.mp4"
+        src="/public/LoginBg.mp4"
       ></video>
 
       <div className=" h-full  grid place-items-center px-4">
