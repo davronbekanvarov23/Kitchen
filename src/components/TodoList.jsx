@@ -18,7 +18,6 @@ function TodoList({ data }) {
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 p-4">
       {!data && <span className="loading loading-spinner text-primary"></span>}
-
       {data &&
         data.map((item) => {
           return (
