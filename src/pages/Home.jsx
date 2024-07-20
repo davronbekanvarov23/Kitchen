@@ -17,9 +17,12 @@ function Home() {
     ["uid", "==", user.uid],
     ["createdAt"]
   );
-
   return (
-    <div className=" bg-[url('../../public/HomeBg.jpg')] bg-cover h-screen">
+    <div
+      className=" bg-[url('../../public/HomeBg.jpg')] bg-cover min-h-[700px] 
+  lg:min-h-[483px]
+  "
+    >
       {" "}
       <div className="align-element">
         <h1 className=" font-bold   text-3xl text-white">Recipes</h1>

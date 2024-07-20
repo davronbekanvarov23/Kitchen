@@ -1,15 +1,16 @@
 //rrd imports
 import { Outlet } from "react-router-dom";
 //components
-import { Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 
 function MainLayout() {
   return (
     <>
       <Navbar />
-      <main>
+      <main >
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }
