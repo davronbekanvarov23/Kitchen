@@ -39,7 +39,7 @@ function TodoList({ data }) {
                   <h1 className=" text-2xl font-bold capitalize">
                     {item.title}
                   </h1>
-                  <p>{item.description.substring(0, 100)}...</p>
+                  <p className=" min-h-[72px]">{item.description.substring(0, 100)}...</p>
 
                   <p className=" ml-auto rounded-lg bg-pink-400   font-bold px-2 ">
                     ⏱ {item.cookingTime} minutes

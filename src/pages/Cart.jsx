@@ -27,11 +27,11 @@ function Cart() {
         <table className="table-auto w-full">
           <thead>
             <tr className="bg-gray-100">
-              <th className="p-2">Nomi/Kategoriyasi</th>
-              <th className="p-2">Narxi</th>
-              <th className="p-2">Tavsifi</th>
-              <th className="p-2">Miqdori</th>
-              <th className="p-2">Umumiy Narx</th>
+              <th className="p-2">Name/Category</th>
+              <th className="p-2">Price</th>
+              <th className="p-2">Mathod</th>
+              <th className="p-2">Amount</th>
+              <th className="p-2">Total Price</th>
               <th className="p-2"></th>
             </tr>
           </thead>
