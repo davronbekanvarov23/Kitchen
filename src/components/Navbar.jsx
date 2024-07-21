@@ -54,6 +54,9 @@ function Navbar() {
                 <Link to="/create">Create</Link>
               </li>
               <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
                 <Link to="/statistics">Statistics</Link>
               </li>
               <li>
@@ -70,6 +73,9 @@ function Navbar() {
         <div className=" navbar-center">
           <Link to="/create" className="hidden lg:btn">
             Create
+          </Link>{" "}
+          <Link to="/about" className="hidden lg:btn">
+            About
           </Link>
           <Link to="/statistics" className="hidden lg:btn">
             Statistics

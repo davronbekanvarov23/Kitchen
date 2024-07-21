@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -6,8 +7,7 @@ function Footer() {
       <footer className="footer footer-center bg-base-300 text-base-content p-4">
         <aside>
           <p>
-            Copyright © {new Date().getFullYear()} - All right reserved by ACME
-            Industries Ltd
+            Copyright © {new Date().getFullYear()} - All right reserved by <Link className="link link-primary" to='https://t.me/anvarov06042002' target="_blank">Davronbek Anvarov</Link>
           </p>
         </aside>
       </footer>
