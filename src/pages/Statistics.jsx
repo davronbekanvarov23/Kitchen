@@ -1,4 +1,5 @@
-import { NoRecipe, PieChart } from "../components";
+import { BarChart, NoRecipe, PieChart } from "../components";
+import GlobalLoading from "../components/GlobalLoading";
 import { useCollection } from "../hooks/useCollection";
 import { useSelector } from "react-redux";
 
@@ -10,14 +11,15 @@ function Statistics() {
     ["createdAt"]
   );
   return (
-    <div
-      className="min-h-screen "
-    >
+    <div className="min-h-screen align-element ">
       {data && data.length === 0 && <NoRecipe />}
+      {!data && <GlobalLoading />}
+
       {data && data.length !== 0 && (
-        <div className="align-element">
+        <div className="">
           <h1 className=" text-6xl font-bold text-center">Statistics</h1>
           <PieChart datas={data} />
+          <BarChart datas={data} />
         </div>
       )}
     </div>

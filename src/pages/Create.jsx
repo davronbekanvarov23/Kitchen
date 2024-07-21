@@ -73,7 +73,7 @@ function Create() {
   }, [userData]);
 
   return (
-    <div className="align-element">
+    <div className="align-element min-h-screen">
       <AddTodo />
 
       {/* <Pagination items={items} itemsPerPage={9}/> */}
