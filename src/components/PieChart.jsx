@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import NoRecipe from "./NoRecipe";
 
 function PieChart({ datas }) {
   const [data, setData] = useState({
@@ -57,13 +58,26 @@ function PieChart({ datas }) {
         options: {
           ...data.options,
           labels: names,
+          legend: {
+            labels: {
+              colors: [
+                "base-100",
+                "base-100",
+                "base-100",
+                "base-100",
+                "base-100",
+              ],
+            },
+          },
         },
       });
     }
   }, [datas]);
   return (
-    <div>
+    <div className=" mt-10  ">
       {!datas && <span className="loading loading-spinner text-primary"></span>}
+     
+      <h1 className=" font-bold text-2xl">National Types:</h1>
       <div id="chart">
         <ReactApexChart
           options={data.options}

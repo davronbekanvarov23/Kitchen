@@ -39,7 +39,7 @@ const Weather = () => {
         <span className="loading loading-ring loading-xs mr-2"></span>
       )}
       {weather && (
-        <div>
+        <div className="flex gap-1">
           {/* <p>{weather.name}</p> */}
           <p className=" mr-2"> {weather.main.temp} °C</p>
         </div>

@@ -3,6 +3,7 @@ import { db } from "../firebase/fireBaseConfig";
 import { doc, deleteDoc } from "firebase/firestore";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
+import GlobalLoading from "./GlobalLoading";
 
 function TodoList({ data }) {
   const daleteBtn = (id) => {
@@ -17,7 +18,7 @@ function TodoList({ data }) {
 
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 p-4">
-      {!data && <span className="loading loading-spinner text-primary"></span>}
+      {!data && <GlobalLoading />}
       {data &&
         data.map((item) => {
           return (
@@ -39,7 +40,9 @@ function TodoList({ data }) {
                   <h1 className=" text-2xl font-bold capitalize">
                     {item.title}
                   </h1>
-                  <p className=" min-h-[72px]">{item.description.substring(0, 100)}...</p>
+                  <p className=" min-h-[72px]">
+                    {item.description.substring(0, 100)}...
+                  </p>
 
                   <p className=" ml-auto rounded-lg bg-pink-400   font-bold px-2 ">
                     ⏱ {item.cookingTime} minutes

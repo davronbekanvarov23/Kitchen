@@ -8,3 +8,4 @@ export { default as TodoList } from "./TodoList";
 export { default as AddTodo } from "./AddTodo";
 export { default as Footer } from "./Footer";
 export { default as PieChart } from "./PieChart";
+export { default as NoRecipe } from "./NoRecipe";
