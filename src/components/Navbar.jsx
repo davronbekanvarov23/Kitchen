@@ -33,8 +33,8 @@ function Navbar() {
     <header className=" bg-base-200">
       <nav className=" align-element navbar">
         <div className=" navbar-start">
-          <Link to="/" className="hidden lg:btn">
-            Home
+          <Link to="/" className="hidden lg:btn ">
+            <h1 className=" font-extrabold font-serif"> MyKitchen</h1>
           </Link>
           {/* DROPDOWN START */}
           <div className="dropdown ml-2 ">
@@ -60,7 +60,6 @@ function Navbar() {
             </ul>
           </div>
           {/* DROPDOWN START */}
-
         </div>
         <div className=" navbar-center">
           <Link to="/create" className="hidden lg:btn">
