@@ -1,36 +1,32 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 function About() {
   const { user } = useSelector((state) => state.user);
   console.log(user);
   return (
-    <div
-      className="align-element min-h-[700px] 
-    lg:min-h-[483px] "
-    >
-      <div className="card bg-base-100 w-full max-w-[600px] shadow-xl mt-40 ml-auto mr-auto">
-        <div className="flex">
-          <img src={user.photoURL} alt="Shoes" className=" max-w-xs rounded" />
-          <div className="card-body">
-            <h1 className=" card-title capitalize"> {user.displayName}</h1>
-            <p>
-              <span className=" font-bold">Registered Time: </span>
-              {user.metadata.creationTime}
-            </p>
-            <p>
-              {" "}
-              <span className=" font-bold">email:</span>
-              {user.email}
-            </p>
-            <p>
-              <span className=" font-bold">Last Login: </span>
-              {user.metadata.lastSignInTime}
-            </p>
-          </div>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="card bg-base-100 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl shadow-xl p-6 mx-4">
+      <div className="flex flex-col sm:flex-row items-center">
+        <img src={user.photoURL} alt="Foydalanuvchi fotosi" className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mb-4 sm:mb-0 sm:mr-4" />
+        <div className="card-body">
+          <h1 className="text-xl font-bold capitalize mb-2">{user.displayName}</h1>
+          <p className="text-gray-700 mb-1">
+            <span className="font-bold">Registered Time: </span>
+            {user.metadata.creationTime}
+          </p>
+          <p className="text-gray-700 mb-1">
+            <span className="font-bold">Email: </span>
+            {user.email}
+          </p>
+          <p className="text-gray-700">
+            <span className="font-bold">Last Login: </span>
+            {user.metadata.lastSignInTime}
+          </p>
         </div>
       </div>
     </div>
+  </div>
+  
   );
 }
 
