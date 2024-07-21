@@ -46,10 +46,15 @@ function Navbar() {
               className="dropdown-content menu bg-base-100 rounded-box z-[1]  p-2 shadow "
             >
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">
+                  <h1 className=" font-extrabold font-serif"> MyKitchen</h1>
+                </Link>
               </li>
               <li>
                 <Link to="/create">Create</Link>
+              </li>
+              <li>
+                <Link to="/statistics">Statistics</Link>
               </li>
               <li>
                 <Mode />
@@ -59,8 +64,9 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          {/* DROPDOWN START */}
+          {/* DROPDOWN END */}
         </div>
+
         <div className=" navbar-center">
           <Link to="/create" className="hidden lg:btn">
             Create

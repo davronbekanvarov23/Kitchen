@@ -11,8 +11,8 @@ function Statistics() {
   );
   return (
     <div
-      className="min-h-[700px] 
-    lg:min-h-[483px] "
+      className="min-h-[620px] 
+    lg:min-h-[403px] "
     >
       {data && data.length === 0 && <NoRecipe />}
       {data && data.length !== 0 && (
