@@ -8,7 +8,7 @@ import { formatPrice } from "../utils/index";
 function Cart() {
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.products);
-
+console.log(products);
   if (products.length === 0) {
     return (
       <div className="align-element flex flex-col items-center gap-5 p-4">
