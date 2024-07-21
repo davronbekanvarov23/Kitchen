@@ -11,7 +11,7 @@ function Statistics() {
     ["createdAt"]
   );
   return (
-    <div className="min-h-screen align-element ">
+    <div className="min-h-screen align-element bg-base-300">
       {data && data.length === 0 && <NoRecipe />}
       {!data && <GlobalLoading />}
 

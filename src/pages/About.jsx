@@ -4,7 +4,7 @@ function About() {
   const { user } = useSelector((state) => state.user);
   console.log(user);
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 align-element">
+    <div className="flex justify-center items-center min-h-screen bg-base-300 align-element">
       <div className="card bg-base-100 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl shadow-xl p-6 mx-4">
         <div className="flex flex-col sm:flex-row items-center">
           <img

@@ -8,12 +8,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../app/userSlice";
 
 //rrd
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 
 //components
 import { FaBarsStaggered } from "react-icons/fa6";
 import { Mode, Weather } from "../components";
+import NavLinks from "./NavLinks";
 
 function Navbar() {
   const { amount } = useSelector((state) => state.products);
@@ -33,9 +34,9 @@ function Navbar() {
     <header className=" bg-base-200">
       <nav className=" align-element navbar">
         <div className=" navbar-start">
-          <Link to="/" className="hidden lg:btn ">
+          <NavLink to="/" className="hidden lg:btn ">
             <h1 className=" font-extrabold font-serif"> MyKitchen</h1>
-          </Link>
+          </NavLink>
           {/* DROPDOWN START */}
           <div className="dropdown ml-2 ">
             <label tabIndex="0" className="btn btn-ghost lg:hidden ">
@@ -43,22 +44,9 @@ function Navbar() {
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1]  p-2 shadow "
+              className="dropdown-content menu menu-sm bg-base-100 rounded-box z-[1]  p-2 shadow "
             >
-              <li>
-                <Link to="/">
-                  <h1 className=" font-extrabold font-serif"> MyKitchen</h1>
-                </Link>
-              </li>
-              <li>
-                <Link to="/create">Create</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/statistics">Statistics</Link>
-              </li>
+              <NavLinks />
               <li>
                 <Mode />
               </li>{" "}
@@ -70,16 +58,11 @@ function Navbar() {
           {/* DROPDOWN END */}
         </div>
 
-        <div className=" navbar-center">
-          <Link to="/create" className="hidden lg:btn">
-            Create
-          </Link>{" "}
-          <Link to="/about" className="hidden lg:btn">
-            About
-          </Link>
-          <Link to="/statistics" className="hidden lg:btn">
-            Statistics
-          </Link>
+        <div className=" navbar-center hidden lg:flex">
+          <ul className=" menu menu-horizontal">
+            {" "}
+            <NavLinks />
+          </ul>
         </div>
         <div className=" navbar-end">
           <Weather />
@@ -87,14 +70,16 @@ function Navbar() {
           <span className="hidden lg:block">
             <Mode />
           </span>
-          <h1 className=" ml-2">{user.displayName}</h1>
           <div className="avatar ml-5">
             <div className="rounded-full ring ring-offset-2 size-8 object-cover">
-              <img src={user.photoURL} alt="" className="object-cover" />
+              <Link to="/about">
+                {" "}
+                <img src={user.photoURL} alt="" className="object-cover" />
+              </Link>
             </div>
           </div>
 
-          <Link
+          <NavLink
             to="/cart"
             className="indicator btn btn-ghost btn-circle btn-md ml-4"
           >
@@ -104,7 +89,7 @@ function Navbar() {
               </span>
               <BsCart3 className="w-6 h-6 " />
             </div>
-          </Link>
+          </NavLink>
 
           <button
             onClick={logoutProfile}

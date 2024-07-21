@@ -25,7 +25,11 @@ function Home() {
     >
       {" "}
       <div className="align-element">
-        <h1 className=" font-bold   text-3xl text-white">Recipes</h1>
+        {data && (
+          <h1 className=" font-bold   text-3xl text-white">
+            Recipes-{data.length}
+          </h1>
+        )}
         {data && data.length == 0 && <NoRecipe />}
 
         <TodoList data={data} />

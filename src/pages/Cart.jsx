@@ -7,11 +7,10 @@ import { formatPrice } from "../utils/index";
 
 function Cart() {
   const dispatch = useDispatch();
-  const { products } = useSelector((state) => state.products);
-console.log(products);
+  const { products, price, amount } = useSelector((state) => state.products);
   if (products.length === 0) {
     return (
-      <div className="align-element flex flex-col items-center gap-5 p-4">
+      <div className="align-element flex flex-col items-center gap-5 p-4 min-h-screen bg-base-300">
         <h1 className="text-2xl font-medium text-center">
           Savatda hozircha mahsulot yo'q
         </h1>
@@ -23,15 +22,14 @@ console.log(products);
     );
   } else {
     return (
-      <div className="align-element overflow-x-auto p-4">
-        <table className="table-auto w-full">
+      <div className="align-element overflow-x-auto p-4  min-h-screen">
+        <table className="table-auto w-full max-w-5xl ml-auto mr-auto">
           <thead>
             <tr className="bg-gray-100">
               <th className="p-2">Name/Category</th>
-              <th className="p-2">Price</th>
               <th className="p-2">Mathod</th>
               <th className="p-2">Amount</th>
-              <th className="p-2">Total Price</th>
+              <th className="p-2"> Price</th>
               <th className="p-2"></th>
             </tr>
           </thead>
@@ -53,14 +51,14 @@ console.log(products);
                     </div>
                   </div>
                 </td>
+
                 <td className="p-2">
-                  <h1 className="text-xl">{formatPrice(product.price)}</h1>
+                  <span className=" line-clamp-3">
+                    {product.description.substring(0, 100)}...
+                  </span>
                 </td>
-                <td className="p-2">
-                  <span>{product.description}...</span>
-                </td>
-                <td className="p-2">
-                  <div className="flex items-center justify-center gap-2">
+                <td className="p-2 min-w-28">
+                  <div className="flex items-center justify-center gap-2 ">
                     <button
                       onClick={() =>
                         dispatch(
@@ -95,7 +93,7 @@ console.log(products);
                     </button>
                   </div>
                 </td>
-                <td className="p-2">
+                <td className="p-2 min-w-28">
                   <h1 className="text-xl w-5">
                     {formatPrice(product.price * product.amount)}
                   </h1>
@@ -112,12 +110,17 @@ console.log(products);
             ))}
           </tbody>
           <tfoot>
-            <tr>
-              <th className="p-2"></th>
-              <th className="p-2"></th>
-              <th className="p-2"></th>
-              <th className="p-2"></th>
-              <th className="p-2"></th>
+            <tr className="bg-gray-100">
+              <th className="p-2">Name/Category</th>
+              <th className="p-2">Mathod</th>
+              <th className="p-2 font-semibold min-w-28">
+                <span> Total:</span>
+                {amount}
+              </th>
+              <th className="p-2 flex flex-col min-w-28 font-semibold">
+                <span className=" "> Total Price:</span>
+                {formatPrice(price)}
+              </th>
               <th className="p-2"></th>
             </tr>
           </tfoot>
