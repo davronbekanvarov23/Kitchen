@@ -60,7 +60,7 @@ function PieChart({ datas }) {
         },
       });
     }
-  }, []);
+  }, [datas]);
   return (
     <div>
       {!datas && <span className="loading loading-spinner text-primary"></span>}
