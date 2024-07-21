@@ -73,21 +73,23 @@ function BarChart({ datas }) {
     }
   }, [datas]);
 
-  return (
-    <div className="mt-10">
-      <h1 className=" font-bold text-2xl">Meals Price:</h1>
+  if (datas && datas.length >=4) {
+    return (
+      <div className="mt-10 max-w-5xl w-full ml-auto mr-auto">
+        <h1 className=" font-bold text-2xl">Meals Price:</h1>
 
-      <div id="chart">
-        <ReactApexChart
-          options={data.options}
-          series={data.series}
-          type="bar"
-          height={350}
-        />
+        <div id="chart">
+          <ReactApexChart
+            options={data.options}
+            series={data.series}
+            type="bar"
+            height={450}
+          />
+        </div>
+        <div id="html-dist"></div>
       </div>
-      <div id="html-dist"></div>
-    </div>
-  );
+    );
+  }
 }
 
 export default BarChart;

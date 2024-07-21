@@ -73,7 +73,7 @@ function PieChart({ datas }) {
     }
   }, [datas]);
   return (
-    <div className=" mt-10  ">
+    <div className=" mt-10 max-w-5xl w-full ml-auto mr-auto ">
    
 
       <h1 className=" font-bold text-2xl">National Types:</h1>
