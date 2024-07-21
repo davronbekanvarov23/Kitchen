@@ -16,7 +16,7 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import { Mode, Weather } from "../components";
 
 function Navbar() {
-  const  {amount}  = useSelector((state) => state.products);
+  const { amount } = useSelector((state) => state.products);
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -36,6 +36,7 @@ function Navbar() {
           <Link to="/" className="hidden lg:btn">
             Home
           </Link>
+          {/* DROPDOWN START */}
           <div className="dropdown ml-2 ">
             <label tabIndex="0" className="btn btn-ghost lg:hidden ">
               <FaBarsStaggered className="h-6 w-6" />
@@ -53,16 +54,20 @@ function Navbar() {
               <li>
                 <Mode />
               </li>{" "}
-
               <li>
                 <button onClick={logoutProfile}>Logout</button>
               </li>
             </ul>
           </div>
+          {/* DROPDOWN START */}
+
         </div>
         <div className=" navbar-center">
           <Link to="/create" className="hidden lg:btn">
             Create
+          </Link>
+          <Link to="/statistics" className="hidden lg:btn">
+            Statistics
           </Link>
         </div>
         <div className=" navbar-end">
@@ -77,7 +82,7 @@ function Navbar() {
               <img src={user.photoURL} alt="" className="object-cover" />
             </div>
           </div>
-       
+
           <Link
             to="/cart"
             className="indicator btn btn-ghost btn-circle btn-md ml-4"
@@ -89,7 +94,7 @@ function Navbar() {
               <BsCart3 className="w-6 h-6 " />
             </div>
           </Link>
-       
+
           <button
             onClick={logoutProfile}
             className="hidden lg:btn ml-5 lg:btn-primary  "

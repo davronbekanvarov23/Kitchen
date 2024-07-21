@@ -37,13 +37,13 @@ function Login() {
         loop
         muted
         className=" bg-cover h-screen absolute -z-10 opacity-90 object-cover w-full "
-        src="/public/LoginBg.mp4"
+        src="/LoginBg.mp4"
       ></video>
 
       <div className=" h-full  grid place-items-center px-4">
-        <div className=" card bg-base-100 w-full max-w-96 shadow-xl  p-8 ">
+        <div className=" card bg-base-100 bg-opacity-60  w-full max-w-96 shadow-xl  p-8 ">
           <Form method="post" className="flex flex-col items-center gap-5">
-            <h1 className=" text-3xl font-semibold">Login</h1>
+            <h1 className=" text-3xl font-bold">Login</h1>
             <FormInput type="text" label="email" name="email" />
             <FormInput type="password" label="password" name="password" />
             <div className=" w-full">
@@ -76,7 +76,7 @@ function Login() {
               </button>
             )}
           </div>
-          <div className="text-center mt-5">
+          <div className="text-center mt-5 text-neutral">
             If you don't have account,
             <Link to="/register" className="link link-primary">
               Register

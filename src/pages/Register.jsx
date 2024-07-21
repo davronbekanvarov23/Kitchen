@@ -37,10 +37,10 @@ function Register() {
         loop
         muted
         className=" bg-cover h-screen absolute -z-10 opacity-90 object-cover w-full "
-        src="/public/RegisterBg.mp4"
+        src="/RegisterBg.mp4"
       ></video>
       <div className=" h-full  grid place-items-center px-4">
-        <div className=" card bg-base-100 w-full max-w-96 shadow-xl  px-8 py-4 ">
+        <div className=" card bg-base-100 bg-opacity-60  w-full max-w-96 shadow-xl  px-8 py-4 ">
           <Form method="post" className="flex flex-col items-center ">
             <h1 className=" text-3xl font-semibold">Register</h1>
             <FormInput type="text" label="displayName" name="displayName" />
